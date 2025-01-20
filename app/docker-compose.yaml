@@ -1,0 +1,27 @@
+version: '3'
+services:
+  identidock:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+      - dnmonster
+    environment:
+      - REDIS_HOST=redis
+    networks:
+      - identidock-network
+
+  redis:
+    image: "redis:alpine"
+    networks:
+      - identidock-network
+
+  dnmonster:
+    image: "alpine/dnmonster"
+    networks:
+      - identidock-network
+
+networks:
+  identidock-network:
+    driver: bridge
