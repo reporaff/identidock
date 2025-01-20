@@ -47,12 +47,12 @@ FORM_HTML = """
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Generador de Imagenes</title>
+    <title>Práctica 2.1</title>
 </head>
 <body>
-    <h1>Generador de Imágenes</h1>
+    <h1>Práctica 2.1</h1>
     <form method="POST">
-        <label for="name">Ingresa tu nombre:</label>
+        <label for="name"><strong>Hola</strong></label>
         <input type="text" name="name" id="name" required>
         <button type="submit">Generar Imagen</button>
     </form>
@@ -61,8 +61,7 @@ FORM_HTML = """
         <p>{{ message }}</p>
     {% endif %}
     {% if image %}
-        <h2>Imagen Generada:</h2>
-        <pre>{{ image }}</pre>
+        <h2><span style="font-weight: bold;">Te pareces a :</span> <span>{{ image }}</span></h2>
     {% endif %}
 </body>
 </html>
